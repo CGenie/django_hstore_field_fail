@@ -1,0 +1,11 @@
+postgres:
+  image: aidanlister/postgres-hstore
+  ports:
+    - 5432:5432
+
+django_hstore_field_fail:
+  build: .
+  links:
+    - postgres
+  volumes:
+    - .:/code
